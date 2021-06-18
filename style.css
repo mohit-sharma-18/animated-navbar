@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat",sans-serif;
+}
+
+.bg{
+    background-image: url("city.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.navbar ul li{
+    list-style: none;
+}
+.navbar ul li a{
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    padding: 20px;
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+.navbar ul li a:hover{
+    transform: scale(1.2);
+    transition: .5s all;
+
+}
+.navbar{
+    background-color: none;
+    border: 1px solid #fff;
+    width: 0px;
+    height: 100%;
+    transition: .5s all ease-in-out;
+    margin: auto;
+    visibility: collapse;
+    opacity: 0;
+
+}
+
+.sideBar{
+    width: 20px;
+    height: 20px;
+    margin: 0px 40px ;
+}
+
+.bar{
+    height: 3px;
+    background-color: #fff;
+    transition: .3s all;
+}
+.middle{
+    margin: 5px 0px;
+}
+#toggle{
+    display: none;
+}    
+
+#toggle:checked ~ .container > .navbar {
+    visibility: visible;
+    transition: .5s all ease-in-out;
+    width: 200px;
+    opacity: 100;
+}
+
+#toggle:checked ~ .sideBar > .bar.middle {
+    opacity: 0;
+}
+#toggle:checked ~ .sideBar > .bar.top {
+    transform: rotate(135deg);
+    margin-top: 8px;
+}
+#toggle:checked ~ .sideBar > .bar.bottom {
+    transform: rotate(-135deg);
+    margin-top: -15px;
+
+}
